@@ -1,0 +1,156 @@
+html,
+body {
+
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Montserrat", sans-serif !important;
+}
+.right-bg {
+  /* background-color: #f3c5c5; */
+  height: 99vh;
+}
+/* .login-image {
+  background-image: url("../Images/signup/original.jpg");
+  width: 100%;
+  position: absolute;
+  right: 0px;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: right;
+ 
+} */
+.login .row{
+  margin: 0;
+}
+.login .padd-zero{
+  padding: 0;
+}
+.login .signup-form {
+  max-width: 50%;
+  margin: 90px auto 0;
+}
+.login .signup-form .heading-title {
+  text-align: center;
+}
+.login .signup-form .heading-title h1 {
+  font-size: 42px;
+  font-weight: bold;
+  color: #744785 ;
+  margin-bottom: 20px;
+}
+.login .signup-form .heading-title h2 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 25px;
+}
+
+.login .signup-form .form-label {
+  margin-bottom: 0.5rem;
+  font-size: 16px;
+  color: #1E1F1F;
+  font-weight: 500;
+}
+.login .signup-form .form-control {
+  padding: 0.495rem 0.75rem;
+  color: #424242;
+  font-weight: 500;
+  font-size: 16px;
+  
+}
+.login .signup-form .btn-primary {
+  color: #fff;
+  background-color: #744785;
+  border-color: #744785;
+  width: 100%;
+  text-transform: uppercase;
+  margin-top: 18px;
+  padding: 0.495rem 0.75rem;
+}
+.login .signup-form ::placeholder {
+  color: #9E9E9E;
+  font-weight: 400;
+}
+.login .signup-form .form-control:focus {
+  border-color: #744785;
+  outline: 0;
+  box-shadow: none;
+}
+.login .signup-form .btn-check:focus+.btn-primary, .login .signup-form .btn-primary:focus ,.login .signup-form .btn-primary:hover{
+  color: #fff;
+  background-color: #421554;
+  border-color: #421554;
+  box-shadow: none;
+}
+.forgot-pass-div, .rigister-div{
+    margin-top: 30px;
+    text-align: center;
+}
+.forgot-pass-div a , .rigister-div a{
+    text-decoration: none;
+}
+.forgot-pass-div .forgot-pass{
+    color: #744785;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+.rigister-div .rigister{
+    color: #744785;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+.login-image {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: stretch;
+  align-items: stretch;
+  -webkit-justify-content: center;
+  justify-content: center;
+  position: relative;
+  border-image: none;
+  border-image: initial;
+  margin: 0;
+  height: 100vh;
+}
+.login-image span {
+  width: 100%;
+}
+.login-image span .imageDiv {
+  display: inline-block;
+  vertical-align: middle;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+}
+.login-image .imageDiv img {
+  max-width: 100%;
+  vertical-align: middle;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+@media only screen and (max-width: 768px) {
+  .login .signup-form {
+    max-width: 100%;
+    margin: 50px auto 0;
+    padding: 0px 30px;
+  }
+  .login .signup-form .heading-title h1 {  
+    margin-bottom: 30px;
+}
+.login .signup-form .heading-title h1 {
+  font-size: 34px;
+}
+.login.signup-form .heading-title h2 {
+  font-size: 20px;
+
+}
+}

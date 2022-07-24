@@ -1,0 +1,575 @@
+{% load static %}
+{% block content %}
+
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Favicon -->
+    <link href="feed/images/favicon.png" rel="icon" type="image/png">
+
+    <!-- Basic Page Needs
+        ================================================== -->
+    <title>Profil</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="LITReview">
+
+    <!-- icons
+    ================================================== -->
+    <link rel="stylesheet" href="feed/css/icons.css">
+
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="{% static 'feed/css/uikit.css' %}">
+    <link rel="stylesheet" href="{% static 'feed/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'feed/css/heart.min.css' %}">
+    <link  rel="stylesheet" href="{% static 'feed/css/tailwind.min.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'feed/css/scratch_1.css' %}">
+
+</head>
+<body>
+
+
+
+
+    <div id="wrapper">
+
+        <!-- Header -->
+        <header>
+            <div class="header_wrap">
+                <div class="header_inner mcontainer">
+                    <div class="left_side">
+
+                        <span class="slide_menu" uk-toggle="target: #wrapper ; cls: is-collapse is-active">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path d="M3 4h18v2H3V4zm0 7h12v2H3v-2zm0 7h18v2H3v-2z" fill="currentColor"></path></svg>
+                        </span>
+
+                        <div id="logo">
+                            <a href="{% url 'home' %}">
+                                <h2>LitReview</h2>
+                            </a>
+                        </div>
+                    </div>
+
+                  <!-- search icon for mobile -->
+                    <div class="header-search-icon" uk-toggle="target: #wrapper ; cls: show-searchbox"> </div>
+                    <div class="header_search"><i class="uil-search-alt"></i>
+                        <input value="" type="text" class="form-control" placeholder="Search for Followers , Videos and more.." autocomplete="off">
+                        <div uk-drop="mode: click" class="header_search_dropdown">
+
+                            <h4 class="search_title"> Recently </h4>
+                            <ul>
+                                <li>
+                                    <a href="#">
+                                        <img src="feed/images/avatars/avatar-1.jpg" alt="" class="list-avatar">
+                                        <div class="list-name">  Erica Jones </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="feed/images/avatars/avatar-2.jpg" alt="" class="list-avatar">
+                                        <div class="list-name">  Coffee  Addicts </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="feed/images/avatars/avatar-3.jpg" alt="" class="list-avatar">
+                                        <div class="list-name"> Mountain Riders </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="feed/images/avatars/avatar-4.jpg" alt="" class="list-avatar">
+                                        <div class="list-name"> Property Rent And Sale  </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="feed/images/avatars/avatar-5.jpg" alt="" class="list-avatar">
+                                        <div class="list-name">  Erica Jones </div>
+                                    </a>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+
+                    <div class="right_side">
+
+                        <div class="header_widgets">
+
+                            <a href="{% url 'follow_users' %}" class="is_link">  Gérer les Followers </a>
+
+                            <!-- Message -->
+
+
+
+                            <a href="#">
+                                <img src="/media/{{user.profile_photo}}" class="is_avatar" alt="">
+                            </a>
+                            <div uk-drop="mode: click;offset:5" class="header_dropdown profile_dropdown">
+
+                                <a href="{% url 'account' %}" class="user">
+                                    <div class="user_avatar">
+                                        <img src="/media/{{user.profile_photo}}" alt="">
+                                    </div>
+                                    <div class="user_name">
+                                        <div> {{ user }} </div>
+                                        <span> @{{ user }}</span>
+                                    </div>
+                                </a>
+
+                                <hr>
+                                <a href="page-setting.html">
+                                    <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"></path></svg>
+                                    My Account
+                                </a>
+
+                                <a href="#" id="night-mode" class="btn-night-mode">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
+                                      </svg>
+                                     Night mode
+                                    <span class="btn-night-mode-switch">
+                                        <span class="uk-switch-button"></span>
+                                    </span>
+                                </a>
+
+
+                                <a href="{% url 'logout' %}">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path>
+                                    </svg>
+                                    Se déconnecter
+                                </a>
+
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- sidebar -->
+        <div class="sidebar">
+
+            <div class="sidebar_inner" data-simplebar>
+
+                <ul>
+                    <li><a href="{% url 'home' %}">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="text-blue-600">
+                            <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
+                        </svg>
+                        <span> Feed </span> </a>
+                    </li>
+                <a href="#" class="see-mover h-10 flex my-1 pl-2 rounded-xl text-gray-600" uk-toggle="target: #more-veiw; animation: uk-animation-fade">
+                    <span class="w-full flex items-center" id="more-veiw">
+                        <svg class="  bg-gray-100 mr-2 p-0.5 rounded-full text-lg w-7" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                        See More
+                    </span>
+                    <span class="w-full flex items-center" id="more-veiw" hidden>
+                        <svg  class="bg-gray-100 mr-2 p-0.5 rounded-full text-lg w-7"  fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z" clip-rule="evenodd"></path></svg>
+                        See Less
+                    </span>
+                </a>
+
+                <h3 class="side-title"> Contacts </h3>
+
+                <div class="contact-list my-2 ml-1">
+
+                    <a href="chats-friend.html">
+                        <div class="contact-avatar">
+                            <img src="feed/images/avatars/avatar-1.jpg" alt="">
+                            <span class="user_status status_online"></span>
+                        </div>
+
+                </div>
+
+                <ul class="side_links" data-sub-title="Pages">
+
+
+                    <li><a href="{% url 'home' %}"> <ion-icon name="settings-outline" class="side-icon"></ion-icon>  <span> Setting   </span> </a>
+                        <ul>
+                            <li><a href="pages-setting.html">layout 1</a></li>
+                            <li><a href="pages-setting2.html">layout 2</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#"> <ion-icon name="albums-outline" class="side-icon"></ion-icon> <span> Info Pages  </span> </a>
+                        <ul>
+                            <li><a href="pages-about.html"> About </a></li>
+                            <li><a href="pages-contact.html"> Contact us </a></li>
+                            <li><a href="pages-privacy.html"> Privacy </a></li>
+                        </ul>
+                    </li>
+
+            </div>
+
+            <!-- sidebar overly for mobile -->
+            <div class="side_overly" uk-toggle="target: #wrapper ; cls: is-collapse is-active"></div>
+
+        </div>
+
+        <!-- Main Contents -->
+        <div class="main_content">
+            <div class="mcontainer">
+
+                <!-- Profile cover -->
+                <div class="profile user-profile">
+
+                    <div class="profiles_banner">
+                        <img src="/media/media/profiles_banner.jpeg" alt="">
+                        <div class="profile_action absolute bottom-0 right-0 space-x-1.5 p-3 text-sm z-50 hidden lg:flex">
+                          <a href="{% url 'edit_profil' %}" class="flex items-center justify-center h-8 px-3 rounded-md bg-gray-700 bg-opacity-70 text-white space-x-1.5">
+                              <ion-icon name="create-outline" class="text-xl"></ion-icon>
+                              <span> Edit </span>
+                          </a>
+                      </div>
+                    </div>
+                    <div class="profiles_content">
+
+                        <div class="profile_avatar">
+                            <div class="profile_avatar_holder">
+                                <img src="/media/{{user.profile_photo}}" alt="">
+                            </div>
+                            <div class="user_status status_online"></div>
+                            <div class="icon_change_photo" hidden> <ion-icon name="camera" class="text-xl"></ion-icon> </div>
+                        </div>
+
+                        <div class="profile_info">
+                            <h1> {{user}} </h1>
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+
+
+    <!-----------------------MODAL-------------------------->
+
+
+                <div class="main_content" style="margin: 0% 10% 0% 10%;">
+                <div class="mcontainer">
+
+                    <!--  FEED CENTRAL  -->
+
+                    <div class="lg:flex lg:space-x-10">
+                        <div class="lg:w-3/4 lg:px-20 space-y-7">
+
+                        <div class="card lg:mx-0 p-4" uk-toggle="target: #create-post-modal">
+                                <div class="flex space-x-3">
+                                    <img src="/media/{{user.profile_photo}}" class="w-10 h-10 rounded-full">
+                                    <input placeholder="Publiez votre critique ici..." class="bg-gray-100 hover:bg-gray-200 flex-1 h-10 px-6 rounded-full">
+                                </div>
+
+                        </div>
+
+
+
+
+
+                            <!-------------------------------------------------------->
+
+                <!-- TICKET PUBLIÉ -->
+
+
+                {% for key, value in list.items %}
+
+
+
+                    {% for key1, value1 in value.items %}
+
+                        {% if key1 == 'ticket'  %}
+                            <div class="publication">
+
+                                <div class="card lg:mx-0 uk-animation-slide-bottom-small">
+
+                                <!-- POST HEADER-->
+
+                                <div class="flex justify-between items-center lg:p-4 p-2.5">
+                                    <div class="flex flex-1 items-center space-x-4">
+                                        <a href="#">
+                                            <img src="/media/{{user.profile_photo}}" class="bg-gray-200 border border-white rounded-full w-10 h-10">
+                                        </a>
+                                        <div class="flex-1 font-semibold capitalize">
+                                            <a href="#" class="text-black dark:text-gray-100">{{value1.user}}</a>
+                                            <div class="text-gray-700 flex items-center space-x-2">{{value1.time_created}}</div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                    <a href="#"> <i class="icon-feather-more-horizontal text-2xl hover:bg-gray-200 rounded-full p-2 transition -mr-1 dark:hover:bg-gray-700"></i> </a>
+                                    <div class="bg-white w-56 shadow-md mx-auto p-2 mt-12 rounded-md text-gray-500 hidden text-base border border-gray-100 dark:bg-gray-900 dark:text-gray-100 dark:border-gray-700"
+                                    uk-drop="mode: click;pos: bottom-right;animation: uk-animation-slide-bottom-small">
+
+                                        <ul class="space-y-1">
+
+                                            <li>
+                                                <a href="{% url 'edit_ticket' value1.id %}" class="flex items-center px-3 py-2 hover:bg-gray-200 hover:text-gray-800 rounded-md dark:hover:bg-gray-800">
+                                                <i class="uil-edit-alt mr-1"></i>  Modifier
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="flex items-center px-3 py-2 text-red-500 hover:bg-red-100 hover:text-red-500 rounded-md dark:hover:bg-red-600">
+                                                <i class="uil-trash-alt mr-1"></i>  Supprimer
+                                                </a>
+                                            </li>
+                                        </ul>
+
+                                    </div>
+                                    </div>
+                                </div>
+
+                                <div class="lacarte">
+
+                                    <div class="rowcard">
+
+                                      <div class="columnbook">
+                                        <img class="bookimg"
+                                         src="/media/{{value1.image}}"
+                                         alt="book">
+                                      </div>
+
+                                      <div class="columndetail">
+                                        <div><a class="titlebook">{{value1.title}}</a></div>
+                                        <div>
+                                            <a class="descriptionbook">
+                                                {{value1.description}}
+                                            </a>
+
+
+                                        </div>
+
+
+                                           <div class="rate">
+                                            <input type="radio" id="star5" name="rate" value="5" />
+                                            <label for="star5" title="text">5 stars</label>
+                                            <input type="radio" id="star4" name="rate" value="4" />
+                                            <label for="star4" title="text">4 stars</label>
+                                            <input type="radio" id="star3" name="rate" value="3" />
+                                            <label for="star3" title="text">3 stars</label>
+                                            <input type="radio" id="star2" name="rate" value="2" />
+                                            <label for="star2" title="text">2 stars</label>
+                                            <input type="radio" id="star1" name="rate" value="1" />
+                                            <label for="star1" title="text">1 star</label>
+                                          </div><br><br>
+
+                                          <div class="commenter">
+                                              <button> <a href="{% url 'comment' %}" style="text-decoration: underline;">Laissez un commentaire</a></button>
+                                          </div>
+
+                                      </div>
+                                  </div>
+                                </div>
+                             </div>
+                            </div>
+                            {% endif %}
+
+                            {% if key1 == 'reviews'  %}
+
+                            {% for value2 in value1 %}
+                            {% for value3 in value2 %}
+
+                            <div class="text-gray-700 py-2 px-3 rounded-md bg-gray-100 relative lg:ml-5 ml-2 lg:mr-12  dark:bg-gray-800 dark:text-gray-100">
+
+                                <p class="leading-6">
+
+                                    <div class="flex flex-1 items-center space-x-4">
+                                        <a href="">
+                                            <img src="/media/{{value3.user.profile_photo}}" class="bg-gray-200 border border-white rounded-full w-10 h-10">
+                                        </a>
+                                        <div class="flex-1 font-semibold capitalize">
+                                            <a href="#" class="text-black dark:text-gray-100">{{value3.user}}</a>
+                                        </div>
+                                    </div>
+                                   Note : {{value3.rating}}/5<br>
+                                    <strong>{{value3.headline}}</strong><br>
+                                    {{value3.body}}<br><br>
+                                    <a href="{% url 'edit_review' value3.id %}" style="float: right; font-size: 0.8rem; "> modifier ou supprimer </a><br>
+                                </p>
+                            </div>
+                                {% endfor %}
+                            {% endfor %}
+                            {% endif %}
+                            {% endfor %}
+                            {% endfor %}
+
+                        </div>
+
+
+
+
+                                                                                    <!--COLONNE DES DEMANDES DE CRITIQUES COLLER EN DESSOUS-->
+
+
+
+                                                                                </div>
+
+                                                                            </div>
+                                                                        </div>
+
+                                                                    </div>
+
+
+
+
+            <div id="create-post-modal" class="create-post is-story" uk-modal>
+            <div
+                class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical rounded-lg p-0 lg:w-5/12 relative shadow-2xl uk-animation-slide-bottom-small">
+
+                <div class="text-center py-3 border-b">
+                    <h3 class="text-lg font-semibold"> Publier une Critique </h3>
+                    <button class="uk-modal-close-default bg-gray-100 rounded-full p-2.5 right-2" type="button" uk-close uk-tooltip="title: Close ; pos: bottom ;offset:7"></button>
+                </div>
+
+                <div class="group flex flex-1 items-start space-x-4 p-5">
+                    <img src="/media/{{user.profile_photo}}"
+                        class="bg-gray-200 border border-white rounded-full w-11 h-11">
+                    <div class="flex-1 pt-2">
+                        <a class="text-black font-medium">{{ user }}</a>
+
+                    </div>
+                </div>
+
+                <div class="flex flex-1 items-start space-x-4 p-5">
+
+                    <form method="post" enctype="multipart/form-data">
+                        <div class="flex-1 pt-2">
+                            {{ ticket_form.as_p }}
+                            {% csrf_token %}
+                        </div>
+                </div>
+
+                    <div class="flex items-center w-full justify-between border-t p-3">
+
+                        <div class="flex space-x-2">
+                            <button type="submit" class="bg-blue-600 flex h-9 items-center justify-center rounded-md text-white px-5 font-medium">
+                                Publier
+                            </button>
+                        </div>
+
+                        <button type="submit" class="bg-blue-600 flex h-9 items-center justify-center rounded-md text-white px-5 font-medium" hidden>
+                                Publier
+                        </button>
+                    </div>
+
+                    </form>
+
+
+
+
+
+    <!-- Create new album -->
+
+    <div id="offcanvas-create" uk-offcanvas="flip: true; overlay: true">
+        <div class="uk-offcanvas-bar lg:w-4/12 w-full dark:bg-gray-700 dark:text-gray-300 p-0 bg-white flex flex-col justify-center">
+
+            <button class="uk-offcanvas-close absolute" type="button" uk-close></button>
+
+            <!-- notification header -->
+            <div class="-mb-1 border-b font-semibold px-5 py-5 text-lg">
+                <h4> Create album </h4>
+            </div>
+
+            <div class="p-6 space-y-3 flex-1">
+                <div>
+                    <label> Album Name  </label>
+                    <input type="text" class="with-border" placeholder="">
+                </div>
+                <div>
+                    <label> Visibilty   </label>
+                    <select id="" name=""  class="shadow-none selectpicker with-border">
+                        <option data-icon="uil-bullseye"> Private </option>
+                        <option data-icon="uil-chat-bubble-user">My Following</option>
+                        <option data-icon="uil-layer-group-slash">Unlisted</option>
+                        <option data-icon="uil-globe" selected>Puplic</option>
+                    </select>
+                </div>
+                <div uk-form-custom class="w-full py-3">
+                        <div class="bg-gray-100 border-2 border-dashed flex flex-col h-32 items-center justify-center relative w-full rounded-lg dark:bg-gray-800 dark:border-gray-600">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-12">
+                                <path d="M5.5 13a3.5 3.5 0 01-.369-6.98 4 4 0 117.753-1.977A4.5 4.5 0 1113.5 13H11V9.413l1.293 1.293a1 1 0 001.414-1.414l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13H5.5z" />
+                                <path d="M9 13h2v5a1 1 0 11-2 0v-5z" />
+                            </svg>
+                        </div>
+                    <input type="file">
+                </div>
+
+            </div>
+            <div class="p-5">
+                <button type="button"  class="button w-full">
+                    Create Now
+                </button>
+            </div>
+
+
+        </div>
+    </div>
+
+    {% endblock %}
+
+
+
+
+
+    <!-- For Night mode -->
+    <script>
+        (function (window, document, undefined) {
+            'use strict';
+            if (!('localStorage' in window)) return;
+            var nightMode = localStorage.getItem('gmtNightMode');
+            if (nightMode) {
+                document.documentElement.className += ' night-mode';
+            }
+        })(window, document);
+
+        (function (window, document, undefined) {
+
+            'use strict';
+
+            // Feature test
+            if (!('localStorage' in window)) return;
+
+            // Get our newly insert toggle
+            var nightMode = document.querySelector('#night-mode');
+            if (!nightMode) return;
+
+            // When clicked, toggle night mode on or off
+            nightMode.addEventListener('click', function (event) {
+                event.preventDefault();
+                document.documentElement.classList.toggle('dark');
+                if (document.documentElement.classList.contains('dark')) {
+                    localStorage.setItem('gmtNightMode', true);
+                    return;
+                }
+                localStorage.removeItem('gmtNightMode');
+            }, false);
+
+        })(window, document);
+    </script>
+
+    <!-- Javascript
+    ================================================== -->
+
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="{% static 'feed/js/tippy.all.min.js' %} "></script>
+    <script src="{% static 'feed/js/uikit.js' %} "></script>
+    <script src="{% static 'feed/js/simplebar.js' %}"></script>
+    <script src="{% static 'feed/js/custom.js' %}"></script>
+    <script src="{% static 'feed/js/bootstrap-select.min.js' %}"></script>
+    <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js">
+
+    </script>
+
+
+</body>
+</html>
+

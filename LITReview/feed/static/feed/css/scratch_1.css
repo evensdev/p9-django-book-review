@@ -1,0 +1,92 @@
+
+.titlebook{
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.rate {
+    float: left;
+    height: 46px;
+
+}
+.rate:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+}
+.rate:not(:checked) > label {
+    float:right;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:30px;
+    color:#ccc;
+}
+.rate:not(:checked) > label:before {
+    content: '★ ';
+}
+.rate > input:checked ~ label {
+    color: #ffc700;
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+    color: #deb217;
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+    color: #c59b08;
+}
+
+/* Modified from: https://github.com/mukulkant/Star-rating-using-pure-css */
+
+.bookimg{
+    max-width:180px;
+    border-radius: 10px;
+}
+
+.rowcard{
+    padding:3%;
+    height: 320px;
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+.columnbook {
+  float: left;
+  /*width: 215px;*/
+  flex-wrap: wrap;
+
+}
+
+.columndetail {
+  float: left;
+  width: 57%;
+  flex-wrap: wrap;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+.commenter{
+
+    border-radius: 5px;
+    height: 35;
+    margin-top:10px;
+}
+
+.titlecomment{
+    font-weight:bold;
+
+}
+.usertitle{
+    font-weight:bold;
+
+}
