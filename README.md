@@ -1,5 +1,8 @@
 FRANÇAIS --------------------------------
 
+
+
+
 Bonjour, 
 Veuillez trouver à travers ce fichier les informations nécessaires pour lancer l'application LitReview via Django
 
@@ -23,7 +26,14 @@ FIN : Le serveur est lancé, vous pourrez accéder à l'application web via l'ur
 
 
 
+
+
 ENGLISH --------------------------------
+
+
+
+
+
 
 
 Hello, 
