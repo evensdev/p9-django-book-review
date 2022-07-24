@@ -5,15 +5,16 @@ Veuillez trouver à travers ce fichier les informations nécessaires pour lancer
 
 
 
-I. Activer l'environnement virtuel
+I. Activez l'environnement virtuel
 
 
-1. Ouvrez le terminal en vous positionnant à la racine du dossier LitReview. Vous y trouverez le dossier "venv"
+1. Décompressez le dossier "venv"
 
-2. Activez votre environnement virtuel  avec les commandes suivantes : source venv/bin/activate
+2. Ouvrez le terminal à la racine du projet et activez votre environnement virtuel avec la commande : source venv/bin/activate
 
 
-II. Lancer l'Application
+
+II. Lancez l'Application
 
 1. Quand votre environnement de développement est activé, changez de dossier en allant sur : cd LitReview/
 2. Lancez la commande : python manage.py runserver
@@ -33,9 +34,10 @@ Please find in this file the necessary information to launch the LitReview appli
 I. Activate the virtual environment
 
 
-1. Open the terminal by positioning yourself at the root of the LitReview folder. You will find the folder "venv" there.
+1. Unzip the "venv" folder
 
-2. Activate your virtual environment with the following commands: source venv/bin/activate
+2. Open the terminal at the root of the project and activate your virtual environment with the command: source venv/bin/activate
+
 
 
 II. Launch the Application
