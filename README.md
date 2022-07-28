@@ -8,18 +8,39 @@ Veuillez trouver à travers ce fichier les informations nécessaires pour lancer
 
 
 
-I. Activez l'environnement virtuel
+I. Clonez le projet depuis github
 
 
-1. Décompressez le dossier "venv"
+- Dans votre terminal tapez la commande : git clone https://github.com/evensdev/p9-django-book-review.git
+- Entrez dans le répertoire en faisant : cd p9-django-book-review
 
-2. Ouvrez le terminal à la racine du projet et activez votre environnement virtuel avec la commande : source venv/bin/activate
+Le projet est maintenant chargé, il vous reste à créer l'environnement virtuel de développement dans le répertoire.
 
 
 
-II. Lancez l'Application
+-----------------------
 
-1. Quand votre environnement de développement est activé, changez de dossier en allant sur : cd LitReview/
+
+
+II. Activez l'environnement virtuel
+
+- Vous êtes dans le répertoire, créez un environnement virtuel avec cette commande : python -m venv env
+- Activez l'environnement avec cette commande : source env/bin/activate
+- installez les packages nécessaires avec cette commmande : pip install -r requirements.txt
+
+
+Votre environnement virtuel est prêt, vous pourrez maintenant lancer le serveur django du projet.
+
+
+
+-------------------------
+
+
+
+
+III. Lancez l'Application
+
+1. Votre environnement virtuel est activé, entrez dans le dossier de l'application en faisant : cd LitReview/
 2. Lancez la commande : python manage.py runserver
 
 FIN : Le serveur est lancé, vous pourrez accéder à l'application web via l'url : http://127.0.0.1:8000
@@ -33,27 +54,50 @@ ENGLISH --------------------------------
 
 
 
-
-
-
 Hello, 
-Please find in this file the necessary information to launch the LitReview application with Django
+Please find in this file the necessary information to launch the LitReview application via Django
 
 
 
-I. Activate the virtual environment
+I. Clone the project from github
 
 
-1. Unzip the "venv" folder
+- In your terminal type the command: git clone https://github.com/evensdev/p9-django-book-review.git
+- Enter the directory by doing : cd p9-django-book-review
 
-2. Open the terminal at the root of the project and activate your virtual environment with the command: source venv/bin/activate
+The project is now loaded, you have to create the virtual development environment in the directory.
 
 
 
-II. Launch the Application
+-----------------------
 
-1. When your development environment is activated, change the folder by going to: cd LitReview/
+
+
+II. Activate the virtual environment
+
+- You are in the directory, create a virtual environment with this command: python -m venv env
+- Activate the environment with this command: source env/bin/activate
+- install the necessary packages with this command : pip install -r requirements.txt
+
+
+Your virtual environment is ready, you can now launch the django server of the project.
+
+
+
+-------------------------
+
+
+
+
+III. Launch the Application
+
+1. Your virtual environment is activated, enter the application folder by doing: cd LitReview/
 2. Run the command: python manage.py runserver
 
-END : The server is launched, you can access the web application with the url : http://127.0.0.1:8000
+END : The server is launched, you can access the web application via the url : http://127.0.0.1:8000
+
+Translated with www.DeepL.com/Translator (free version)
+
+
+
 
