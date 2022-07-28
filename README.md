@@ -49,6 +49,20 @@ FIN : Le serveur est lancé, vous pourrez accéder à l'application web via l'ur
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ENGLISH --------------------------------
 
 
