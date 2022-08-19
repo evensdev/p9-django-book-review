@@ -110,8 +110,3 @@ III. Launch the Application
 
 END : The server is launched, you can access the web application via the url : http://127.0.0.1:8000
 
-Translated with www.DeepL.com/Translator (free version)
-
-
-
-
